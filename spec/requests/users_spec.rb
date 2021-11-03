@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "Users", type: :request do
-  describe "GET /index" do
+RSpec.describe 'Users', type: :request do
+  describe 'GET /index' do
     before { get '/users' }
     it 'receive a ok status' do
       expect(response).to have_http_status(:ok)
@@ -16,7 +16,7 @@ RSpec.describe "Users", type: :request do
     end
   end
 
-  describe "GET /show" do
+  describe 'GET /show' do
     before { get '/users/756' }
     it 'receive a ok status' do
       expect(response).to have_http_status(:ok)
