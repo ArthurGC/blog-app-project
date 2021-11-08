@@ -11,5 +11,4 @@ class Post < ApplicationRecord
     post_counter = user.posts.count
     user.update(posts_counter: post_counter)
   end
-
 end
