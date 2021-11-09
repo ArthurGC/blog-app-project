@@ -1,2 +1,11 @@
-<h1>Posts#show</h1>
-<p>This page shows a post for a certain user</p>
+<div>
+    <h3><%= @post.title %> by <%= @user.name %></h3>
+    <p><%= @post.text %></p>
+    <p>Comments: <%= @post.comments_counter %></p>
+    <p>Likes:  <%= @post.likes_counter %></p>
+</div>
+<div>
+    <% @post.comments.each do |comment| %>
+        <p>Username: <%= comment.text %></p>
+    <%end%>
+</div>

@@ -1,2 +1,22 @@
-<h1>Users#show</h1>
-<p>This page show one User</p>
+<div>
+    <div>
+        <%= @user.photo %>
+    </div>
+    <div>
+        <%= @user.name %>
+        <p>Number of posts: <%= @user.posts_counter %></p>
+    </div>
+    <div>
+        <h2>Bio</h2>
+        <p><%= @user.bio %></p>
+    </div>
+
+    <% @list_of_posts.each do |post| %>
+        <div>
+            <h3><%= post.title %></h3>
+            <p><%= post.text %></p>
+            <p>Comments: <%= post.comments_counter %></p>
+            <p>Likes:  <%= post.likes_counter %></p>
+        </div>
+    <%end%>
+</div>
