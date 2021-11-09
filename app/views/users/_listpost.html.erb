@@ -1,0 +1,8 @@
+<% @list_of_posts.each do |post| %>
+<div>
+    <h3><%= post.title %></h3>
+    <p><%= post.text %></p>
+    <p>Comments: <%= post.comments_counter %></p>
+    <p>Likes:  <%= post.likes_counter %></p>
+</div>
+<%end%>
