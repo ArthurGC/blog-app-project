@@ -1,11 +1,15 @@
-<div>
-    <h3><%= @post.title %> by <%= @user.name %></h3>
+<article>
+    <div>
+        <h3><%= @post.title %> by <%= @user.name %></h3>
+        <div>
+            <p>Comments: <%= @post.comments_counter %></p>
+            <p>Likes:  <%= @post.likes_counter %></p>
+        </div>
+    </div>
     <p><%= @post.text %></p>
-    <p>Comments: <%= @post.comments_counter %></p>
-    <p>Likes:  <%= @post.likes_counter %></p>
-</div>
-<div>
+</article>
+<article>
     <% @post.comments.each do |comment| %>
         <p>Username: <%= comment.text %></p>
     <%end%>
-</div>
+</article>
