@@ -1,14 +1,14 @@
-<article>
-    <div>
+<article class="post-container">
+    <div class="post-header">
         <h3><%= @post.title %> by <%= @user.name %></h3>
-        <div>
+        <div class="comment-like-container">
             <p>Comments: <%= @post.comments_counter %></p>
             <p>Likes:  <%= @post.likes_counter %></p>
         </div>
     </div>
     <p><%= @post.text %></p>
 </article>
-<article>
+<article class="post-container">
     <% @post.comments.each do |comment| %>
         <p>Username: <%= comment.text %></p>
     <%end%>
