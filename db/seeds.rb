@@ -12,7 +12,7 @@ require 'faker'
       name: Faker::Name.name,
       photo: 'Photo',
       bio: Faker::Lorem.sentence(word_count: 3, supplemental: true),
-      post_counter: 0,
+      posts_counter: 0,
   )
 end
 
