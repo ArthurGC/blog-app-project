@@ -3,89 +3,90 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 body {
-    padding: 2rem 5rem;
+  padding: 2rem 5rem;
 }
 
 .user_link_container {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
+
 .user-card {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .photo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid black;
-    width: 110px;
-    height: 126px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  width: 110px;
+  height: 126px;
 }
 
 .user-container {
-    padding: 8px 1rem;
-    border: 2px solid black;
-    flex-grow: 2;
-    height: 110px;
+  padding: 8px 1rem;
+  border: 2px solid black;
+  flex-grow: 2;
+  height: 110px;
 
-    .user-name {
-        font-size: 2rem;
-    }
+  .user-name {
+    font-size: 2rem;
+  }
 
-    .text {
-        text-align: right;
-        font-size: 1.1rem;
-    }
+  .text {
+    text-align: right;
+    font-size: 1.1rem;
+  }
 }
 
 .bio-container {
-    padding: 8px 1rem;
-    border: 2px solid black;
+  padding: 8px 1rem;
+  border: 2px solid black;
 
-    .title {
-        font-size: 1.5rem;
-    }
+  .title {
+    font-size: 1.5rem;
+  }
 
-    .text {
-        font-size: 1.1rem;
-    }
+  .text {
+    font-size: 1.1rem;
+  }
 }
 
 .post-container {
-    padding: 8px 1rem;
-    border: 2px solid black;
-    margin: 1rem 0;
+  padding: 8px 1rem;
+  border: 2px solid black;
+  margin: 1rem 0;
 
-    .title {
-        font-size: 1.5rem;
-    }
+  .title {
+    font-size: 1.5rem;
+  }
 
-    .text {
-        font-size: 1.1rem;
-    }
+  .text {
+    font-size: 1.1rem;
+  }
 
-    .comment-like-container {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 1rem;
-    }
+  .comment-like-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
 }
 
 .btn-container {
-    text-align: center;
-    margin-top: 2rem;
+  text-align: center;
+  margin-top: 2rem;
 }
 
 .button {
-    border: 2px solid black;
-    font-size: 1.1rem;
-    font-weight: 800;
-    text-decoration: none;
-    padding: 5px 1rem;
-    color: black;
+  border: 2px solid black;
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-decoration: none;
+  padding: 5px 1rem;
+  color: black;
 }
