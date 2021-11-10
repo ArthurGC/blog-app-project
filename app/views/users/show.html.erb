@@ -1,2 +1,7 @@
-<h1>Users#show</h1>
-<p>This page show one User</p>
+<%= render "users/theuser" %>
+
+<%= render "users/listpost" %>
+
+<div class="btn-container">
+    <%= link_to "See all posts", "#{@user.id}/posts", class: "button" %>
+</div>
