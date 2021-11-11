@@ -11,7 +11,7 @@ require 'faker'
   User.create( 
       name: Faker::Name.name,
       photo: 'Photo',
-      bio: Faker::Lorem.sentence(word_count: 3, supplemental: true),
+      bio: Faker::Lorem.sentence(word_count: 5, supplemental: true),
       posts_counter: 0,
   )
 end
@@ -20,7 +20,7 @@ end
     Post.create(
         author_id: 1,
         title: Faker::Book.title,
-        text: Faker::Lorem.paragraph,
+        text: Faker::Lorem.paragraph(sentence_count: 20),
         comments_counter: 0,
         likes_counter: 0,
     )
