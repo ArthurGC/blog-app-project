@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
         @comment.author_id = @user.id
         @comment.post_id = @post.id
         if @comment.save
+            @comment.update_comments_counter
             redirect_to user_post_path(@user.id,@post)
         else
             render :new
