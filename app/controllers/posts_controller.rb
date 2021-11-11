@@ -15,18 +15,19 @@ class PostsController < ApplicationController
   end
 
   def create
-    new_post = Post.create(title: params[:post][:title], text: params[:post][:text], author_id: self.current_user.id)
-    respond_to do |format| 
-      format.html do 
-        if new_post.save
-          flash[:notice] = "Saved successfully"
-          redirect_to "/users/#{new_post.author_id}/posts/#{new_post.id}"
-        else
-          flash[:error] = "error"
-          render :new
-        end
-      end
+    @user = current_user
+    @post = @current_user.posts.new(posts_params)
+    @post.author_id = @user.id
+
+    if @post.save
+      redirect_to user_post_path(@user.id,@post)
+    else
+      render :new
     end
+  end
+
+  def posts_params
+    params.require(:post).permit(:title, :text)
   end
 
 end
