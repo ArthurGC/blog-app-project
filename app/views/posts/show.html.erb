@@ -2,6 +2,9 @@
     <div class="post-header">
         <h3><%= @post.title %> by <%= @user.name %></h3>
         <div class="comment-like-container">
+            <%= link_to  "/users/#{@user.id}/posts/#{@post.id}/likes", method: :post do %>
+            <i class="fa fa-thumbs-up"></i>
+            <% end %>
             <p>Comments: <%= @post.comments_counter %></p>
             <p>Likes:  <%= @post.likes_counter %></p>
         </div>
