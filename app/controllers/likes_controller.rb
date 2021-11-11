@@ -10,7 +10,6 @@ class LikesController < ApplicationController
             @like.post_id = @post.id
             p @like
             if @like.save
-                p @like
                 @like.update_likes_counter
                 redirect_to user_post_path(@user.id,@post)
             end
