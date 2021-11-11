@@ -9,11 +9,11 @@
             <p>Likes:  <%= @post.likes_counter %></p>
         </div>
     </div>
-    <p><%= @post.text %></p>
+    <p class="post-text"><%= @post.text %></p>
 </article>
 <article class="post-container">
     <% @post.comments.each do |comment| %>
-        <p>Username: <%= comment.text %></p>
+        <p class="comment">Username: <%= comment.text %></p>
     <%end%>
 </article>
 
