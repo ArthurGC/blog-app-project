@@ -18,8 +18,8 @@ class PostsController < ApplicationController
     @user = current_user
     @post = @current_user.posts.new(posts_params)
     @post.author_id = @user.id
-
     if @post.save
+      @post.update_posts_counter
       redirect_to user_post_path(@user.id,@post)
     else
       render :new
