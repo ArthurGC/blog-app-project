@@ -55,11 +55,3 @@ end
         )
     end
 end
-
-(1..10).each do |id|
-    Like.create!(
-        id: id,
-        author_id: rand(1..2),
-        post_id: rand(1..6),
-    )
-end
