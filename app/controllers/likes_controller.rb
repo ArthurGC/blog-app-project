@@ -2,7 +2,9 @@ class LikesController < ApplicationController
     def create
         @user = current_user
         @post = @user.posts.find(params[:post_id])
-        if !already_liked?
+        if already_liked?
+            redirect_to user_post_path(@user.id,@post)
+        else
             @like = @post.likes.new()
             @like.author_id = @user.id
             @like.post_id = @post.id
@@ -12,12 +14,10 @@ class LikesController < ApplicationController
                 @like.update_likes_counter
                 redirect_to user_post_path(@user.id,@post)
             end
-        else
-            redirect_to user_post_path(@user.id,@post)
         end
     end
 
     def already_liked?
-        Like.where(user_id: @user.id, post_id: params[:id]).exists?
+        Like.where(author_id: @user.id, post_id: @post.id).exists?
       end
 end
