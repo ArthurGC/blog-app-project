@@ -5,4 +5,18 @@
 .post-header {
   display: flex;
   justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.post-text {
+  padding: 1rem 0;
+  font-size: 1.1rem;
+}
+
+.user_link_container:hover .title {
+  color: #777;
+}
+
+.fa-thumbs-up:hover {
+  transform: scale(1.2);
 }

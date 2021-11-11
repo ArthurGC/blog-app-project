@@ -2,8 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+@import "font-awesome";
+
 body {
-  padding: 2rem 5rem;
+  padding: 0 5rem 2rem 5rem;
+  margin: 0;
 }
 
 .user_link_container {
@@ -53,6 +56,7 @@ body {
 
   .text {
     font-size: 1.1rem;
+    padding: 1rem 0;
   }
 }
 
@@ -67,6 +71,7 @@ body {
 
   .text {
     font-size: 1.1rem;
+    padding: 1rem 0;
   }
 
   .comment-like-container {
@@ -74,6 +79,11 @@ body {
     align-items: center;
     justify-content: flex-end;
     gap: 1rem;
+  }
+
+  .comment {
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
   }
 }
 
