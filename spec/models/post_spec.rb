@@ -40,7 +40,7 @@ RSpec.describe Post, type: :model do
     expect(@post.recent_comments.length).to be(5)
   end
 
-  it 'updatePostsCounter should return 1 post' do
+  it 'PostsCounter should return 1 post' do
     expect(@user.posts.length).to be(1)
   end
 end

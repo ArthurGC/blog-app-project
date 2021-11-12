@@ -1,12 +1,5 @@
 <h2>Create a Post</h2>
 <%= form_with model: @post, class: "form" do |form| %>
-<!-- <% if @post.errors.any? %>
-    <ul class="error-container">
-        <% @post.errors.full_messages.each do |message| %>
-            <li class="error-message"><%= message %></li>
-        <% end %>
-    </ul>
-<% end %> -->
 
 <% flash.each do |name, msg| %>
     <div class="error-container">
