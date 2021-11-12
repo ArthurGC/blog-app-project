@@ -20,3 +20,27 @@
 .fa-thumbs-up:hover {
   transform: scale(1.2);
 }
+
+.error-container {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  margin-bottom: 15px;
+  border-radius: 5px;
+
+  .error-message {
+    font-size: 1rem;
+  }
+}
+
+.success-container {
+  padding: 20px;
+  background-color: #00ff37;
+  color: black;
+  margin-bottom: 15px;
+  border-radius: 5px;
+
+  .error-message {
+    font-size: 1rem;
+  }
+}

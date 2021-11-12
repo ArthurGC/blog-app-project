@@ -1,6 +1,6 @@
 <%= render "posts/theuser" %>
 
-<% @list_of_posts.each do |post| %>
+<% @post.each do |post| %>
 <article class="post-container">
     <%= link_to "/users/#{@user.id}/posts/#{post.id}", class: "user_link_container" do %>
     <h3 class="title"><%= post.title %></h3>

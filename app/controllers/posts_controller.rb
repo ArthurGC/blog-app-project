@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @list_of_posts = @user.recent_posts
+    @post = @user.posts.includes(:comments)
   end
 
   def show
@@ -19,10 +19,11 @@ class PostsController < ApplicationController
     @post = @user.posts.new(posts_params)
     @post.author_id = @user.id
     if @post.save
-      @post.update_posts_counter
+      flash[:notice] = 'Post published succesfully'
       redirect_to user_post_path(@user.id, @post)
     else
-      render :new
+      flash[:error] = @post.errors.full_messages[0]
+      redirect_to new_post_path
     end
   end
 
