@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @post = @user.posts.includes(:comments)
-
   end
 
   def show
@@ -24,7 +23,7 @@ class PostsController < ApplicationController
       redirect_to user_post_path(@user.id, @post)
     else
       flash[:error] = @post.errors.full_messages[0]
-      redirect_to new_post_path 
+      redirect_to new_post_path
     end
   end
 
