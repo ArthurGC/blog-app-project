@@ -16,7 +16,7 @@ RSpec.describe User, type: :model do
     expect(@user).to_not be_valid
   end
 
-  it 'name should be present' do 
+  it 'recentPosts should be return 3 post' do 
     (1..5).each do |id|
       @user.posts.create(
         author_id: @user.id,
