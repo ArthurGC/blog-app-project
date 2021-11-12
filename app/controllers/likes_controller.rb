@@ -9,7 +9,6 @@ class LikesController < ApplicationController
       @like.author_id = @user.id
       @like.post_id = params[:post_id]
       if @like.save
-        @like.update_likes_counter
         redirect_to user_post_path(@user.id, @post)
       end
     end
