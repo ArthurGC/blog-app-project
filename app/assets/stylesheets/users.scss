@@ -36,37 +36,17 @@ body {
 }
 
 .user-container {
-  padding: 8px 1rem;
+  padding: 8px 0;
   flex-grow: 2;
 }
 
 .bio-container {
-  padding: 8px 1rem;
-  border: 2px solid black;
-
-  .title {
-    font-size: 1.5rem;
-  }
-
-  .text {
-    font-size: 1.1rem;
-    padding: 1rem 0;
-  }
+  padding: 8px 0;
 }
 
 .post-container {
-  padding: 8px 1rem;
-  border: 2px solid black;
+  padding: 8px 0;
   margin: 1rem 0;
-
-  .title {
-    font-size: 1.5rem;
-  }
-
-  .text {
-    font-size: 1.1rem;
-    padding: 1rem 0;
-  }
 
   .comment-like-container {
     display: flex;
