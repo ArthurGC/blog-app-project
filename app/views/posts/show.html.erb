@@ -1,9 +1,4 @@
 <div class="container">
-    <% flash.each do |name, msg| %>
-        <div class="alert alert-success">
-            <%= msg %>
-        </div>
-    <% end %>
     <article class="post-container">
         <div class="d-flex flex-column align-items-center gap-2 mb-4 flex-sm-row justify-content-sm-between">
             <h3 class="fs-5 fw-bold"><%= @post.title %> by <%= @user.name %></h3>
