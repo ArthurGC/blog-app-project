@@ -1,67 +1,8 @@
 .form {
   margin: 1rem 0;
 
-  .input-comment {
-    width: 30%;
-    height: 2rem;
-    border-radius: 5px;
-    padding: 5px 0.8rem;
-    margin-right: 1rem;
-  }
-
-  .submit {
-    height: 2rem;
-    border-radius: 5px;
-    background-color: rgb(22, 73, 243);
-    color: white;
-    padding: 5px 0.8rem;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-    border: none;
-    font-family: inherit;
-  }
-
-  .form-section {
-    margin: 1rem 0;
-  }
-
-  .input-text {
-    margin-bottom: 5px;
-  }
-
-  .post-input {
-    width: 30%;
-    height: 2rem;
-    border-radius: 5px;
-    padding: 5px 0.8rem;
-  }
-
-  .post-area {
-    width: 30%;
-    height: 5rem;
-    border-radius: 5px;
-    border: 2px solid black;
-    padding: 8px 0.8rem;
+  .form-area {
     resize: none;
   }
 }
 
-.button-return {
-  border-radius: 5px;
-  background-color: rgb(22, 73, 243);
-  border: none;
-  color: white;
-  padding: 8px 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.3px;
-  cursor: pointer;
-  text-decoration: none;
-  margin-left: 1rem;
-  font-size: 14px;
-}
-
-.submit:hover,
-.button-return:hover {
-  background-color: rgb(11, 0, 168);
-}

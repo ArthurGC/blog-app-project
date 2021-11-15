@@ -46,31 +46,9 @@ body {
 
 .post-container {
   padding: 8px 0;
-  margin: 1rem 0;
-
-  .comment-like-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 1rem;
-  }
-
-  .comment {
-    padding: 0.5rem 0;
-    font-size: 1.1rem;
-  }
 }
 
 .btn-container {
   text-align: center;
-  margin-top: 2rem;
 }
 
-.button {
-  border: 2px solid black;
-  font-size: 1.1rem;
-  font-weight: 800;
-  text-decoration: none;
-  padding: 5px 1rem;
-  color: black;
-}

@@ -25,6 +25,14 @@ header {
       }
     }
 
+    .menu {
+      list-style: none;
+
+      .link:hover {
+        text-decoration: underline;
+      }
+    }
+
     li {
       a {
         font-size: 1.1rem;
