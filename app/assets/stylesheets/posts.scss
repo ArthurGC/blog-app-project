@@ -2,45 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.post-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 0;
-}
-
-.post-text {
-  padding: 1rem 0;
-  font-size: 1.1rem;
-}
-
-.user_link_container:hover .title {
-  color: #777;
-}
-
 .fa-thumbs-up:hover {
   transform: scale(1.2);
-}
-
-.error-container {
-  padding: 20px;
-  background-color: #f44336;
-  color: white;
-  margin-bottom: 15px;
-  border-radius: 5px;
-
-  .error-message {
-    font-size: 1rem;
-  }
-}
-
-.success-container {
-  padding: 20px;
-  background-color: #00ff37;
-  color: black;
-  margin-bottom: 15px;
-  border-radius: 5px;
-
-  .error-message {
-    font-size: 1rem;
-  }
 }

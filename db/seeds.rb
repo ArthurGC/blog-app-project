@@ -10,7 +10,7 @@ require 'faker'
 (1..2).each do |id|
   User.create( 
       name: Faker::Name.name,
-      photo: 'Photo',
+      photo: "cartoon_#{id+3}",
       bio: Faker::Lorem.sentence(word_count: 5, supplemental: true),
       posts_counter: 3,
   )
