@@ -13,8 +13,12 @@
 
   <body>
     <%= render "navbar/nav" %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="container">
+      <% if notice != nil %>
+        <p class="notice alert alert-info"><%= notice %></p>
+      <% end %>
+    </div>
+    
     <%= yield %>
   </body>
 </html>

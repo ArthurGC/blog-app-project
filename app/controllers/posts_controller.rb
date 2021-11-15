@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :delete]
+
+
   def index
     @user = User.find(params[:user_id])
     @post = @user.posts.includes(:comments)
