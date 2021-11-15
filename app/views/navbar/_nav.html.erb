@@ -11,9 +11,16 @@
                 <li>
                     <%= link_to "All Users", users_path, class: "link text-success" %>
                 </li>
+                <% unless user_signed_in? %>
                 <li>
-                    <%= link_to "Sign up", new_user_registration_path, class: "link text-success" %>
+                    <%= link_to "Sign in", new_user_session_path, class: "link text-success" %>
                 </li>
+                <% end %>
+                <% if user_signed_in? %>
+                <li>
+                    <%= link_to "Log out", new_user_registration_path, class: "link text-success" %>
+                </li>
+                <% end %>
             </ul>
         </ul>
     </nav>
