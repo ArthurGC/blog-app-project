@@ -5,7 +5,6 @@
 @import "font-awesome";
 
 body {
-  padding: 0 5rem 2rem 5rem;
   margin: 0;
 }
 
@@ -17,7 +16,7 @@ body {
 .user-card {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   margin-bottom: 2rem;
 }
 
@@ -25,25 +24,20 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid black;
   width: 110px;
-  height: 126px;
+  height: 93px;
+  border-radius: 1rem;
+
+  img {
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .user-container {
   padding: 8px 1rem;
-  border: 2px solid black;
   flex-grow: 2;
-  height: 110px;
-
-  .user-name {
-    font-size: 2rem;
-  }
-
-  .text {
-    text-align: right;
-    font-size: 1.1rem;
-  }
 }
 
 .bio-container {

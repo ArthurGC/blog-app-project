@@ -1,8 +1,11 @@
 <header>
-    <nav class="navbar">
-        <ul>
+    <nav class="container">
+        <ul class=" nav d-flex flex-row align-items-center justify-content-between">
+            <li class="logo-container">
+                <%= image_tag("parrot_logo.png", :alt => "parrot logo") %>
+            </li>
             <li>
-                <%= link_to "New Post", new_post_path, class: "link" %>
+                <%= link_to "New Post", new_post_path, class: "btn btn-outline-success" %>
             </li>
         </ul>
     </nav>
