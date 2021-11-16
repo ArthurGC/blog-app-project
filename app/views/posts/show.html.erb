@@ -1,15 +1,12 @@
 <div class="container">
-    <% flash.each do |name, msg| %>
-        <div class="alert alert-success">
-            <%= msg %>
-        </div>
-    <% end %>
     <article class="post-container">
         <div class="d-flex flex-column align-items-center gap-2 mb-4 flex-sm-row justify-content-sm-between">
             <h3 class="fs-5 fw-bold"><%= @post.title %> by <%= @user.name %></h3>
             <div class="d-flex align-items-center  gap-4">
-                <%= link_to  "/users/#{@user.id}/posts/#{@post.id}/likes", method: :post do %>
-                <i class="fa fa-thumbs-up fs-3 pe-2 text-success"></i>
+                <% if user_signed_in? %>
+                    <%= link_to  "/users/#{@user.id}/posts/#{@post.id}/likes", method: :post do %>
+                    <i class="fa fa-thumbs-up fs-3 pe-2 text-success"></i>
+                    <% end %>
                 <% end %>
                 <div class="d-flex justify-content-end gap-4">
                     <div class="d-flex flex-column">
@@ -30,6 +27,7 @@
         <p class="fs-6 py-2 m-0"><span class="fw-bold"><%= comment.author.name %>:</span> <%= comment.text %></p>
         <%end%>
     </article>
-
-    <%= render "comments/form" %>
+    <% if user_signed_in? %>
+        <%= render "comments/form" %>
+    <% end %>
 </div>

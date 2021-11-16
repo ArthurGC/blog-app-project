@@ -33,6 +33,11 @@ To get a local copy up and running follow these simple steps:
 - Twitter: [@ArthurGC_22](https://twitter.com/ArthurGC_22)
 - LinkedIn: [alxguzmanc](https://www.linkedin.com/in/alxguzmanc/)
 
+👤 **Guilherme Giachellin**
+
+- GitHub: [@GuilhermeGiachellin](https://github.com/GuilhermeGiachellin)
+- LinkedIn: [GuilhermeGiachellin](https://www.linkedin.com/in/guilherme-giachellin-2599771b9/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
