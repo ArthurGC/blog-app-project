@@ -7,10 +7,8 @@ class PostsController < ApplicationController
   end
 
   def show
-    @current = current_user
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
-    @comments = @post.comments
     @comment = Comment.new
   end
 
@@ -29,6 +27,16 @@ class PostsController < ApplicationController
       flash[:error] = @post.errors.full_messages[0]
       redirect_to new_post_path
     end
+  end
+
+  def destroy
+    @user = current_user
+    @user_post = User.find(params[:user_id])
+    @post = Post.find(params[:id])
+    @post.destroy
+    @user_post.decrement(:posts_counter)
+    @user_post.save
+    redirect_to user_posts_path(@user_post.id)
   end
 
   def posts_params
