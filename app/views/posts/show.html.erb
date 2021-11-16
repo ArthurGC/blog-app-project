@@ -20,7 +20,7 @@
                 </div>
                 <div class="pt-4">
                     <% if can? :destroy, @post %>
-                    <%=link_to "Remove Comment", user_post_path(@user,@post), method: :delete, class: "btn btn-success mb-4" %>
+                    <%=link_to "Remove Post", user_post_path(@user,@post), method: :delete, class: "btn btn-success mb-4" %>
                 <% end %>
                 </div>
             </div>
