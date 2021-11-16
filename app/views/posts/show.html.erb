@@ -24,9 +24,13 @@
     </article>
     <article class="post-container mb-4">
         <% @post.comments.each do |comment| %>
-        <p class="fs-6 py-2 m-0"><span class="fw-bold"><%= comment.author.name %>:</span> <%= comment.text %></p>
+        <p class="fs-6 py-2 m-0"><span class="fw-bold"><%= comment.author.name %>:</span> <%= comment.text %></p>   
+            <% if can? :destroy, Comment.find_by(author_id: comment.author_id, post_id: comment.post_id)  %>
+                <%=link_to "Remove Comment", "#{@post.id}/comments/#{comment.id}", method: :delete %>
+            <%end%>
         <%end%>
     </article>
+   
     <% if user_signed_in? %>
         <%= render "comments/form" %>
     <% end %>
