@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe 'Blog App',js: true, type: :feature do
+RSpec.describe 'Blog App', type: :feature do
   describe 'index page' do
 
-    before :each do
+    before :all do
         user = User.new(
             email: 'admin@gmail.com',
             password: 'password',
@@ -41,7 +41,7 @@ RSpec.describe 'Blog App',js: true, type: :feature do
 
     it "When I click on a user, I am redirected to that user's show page." do
         visit users_path
-        click_link('us-profile')
+        click_link('See profile')
         sleep(2)
         expect(page).to have_current_path(user_path(1))
     end

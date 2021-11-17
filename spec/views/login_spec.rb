@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Blog App', type: :system do
-  describe 'index page' do
+  describe 'login page' do
 
     before :all do
         user = User.new(
