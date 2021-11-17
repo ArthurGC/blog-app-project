@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Blog App', type: :feature do
-  describe 'post index page' do
+  describe 'post show page' do
     before :all do
       user = User.new(
         email: 'admin@gmail.com',
@@ -64,7 +64,7 @@ RSpec.describe 'Blog App', type: :feature do
 
     it 'I can see how many likes it has.' do
       visit user_post_path(1, 1)
-      expect(page).to have_content('5')
+      expect(page).to have_content('0')
     end
 
     it 'I can see the post body.' do

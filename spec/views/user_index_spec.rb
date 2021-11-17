@@ -41,7 +41,6 @@ RSpec.describe 'Blog App', type: :feature do
     it "When I click on a user, I am redirected to that user's show page." do
       visit users_path
       click_link('See profile')
-      sleep(2)
       expect(page).to have_current_path(user_path(1))
     end
   end
