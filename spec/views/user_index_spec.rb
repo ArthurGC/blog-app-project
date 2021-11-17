@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe 'Blog App', type: :system do
+RSpec.describe 'Blog App',js: true, type: :feature do
   describe 'index page' do
 
-    before :all do
+    before :each do
         user = User.new(
             email: 'admin@gmail.com',
             password: 'password',
@@ -13,43 +13,37 @@ RSpec.describe 'Blog App', type: :system do
         )
         user.skip_confirmation!
         user.save!
+
+        post = Post.create(
+            id: 1,
+            author_id: 1,
+            title: "Lorenzo' Post",
+            text: 'Lorenzo was here. The Lorenzo',
+            comments_counter: 0,
+            likes_counter: 0,
+        )
     end
 
-    it 'new_user_session_path shows the right content' do
-      visit new_user_session_path
-      sleep(2)
-      expect(page).to have_content('Email')
-      expect(page).to have_content('Password')
-      expect(page).to have_content('Log in')
+    it 'users_path show name of users' do
+      visit users_path
+      expect(page).to have_content('Admin')
     end
 
-    it 'new_user_session_path show a detailed error' do
-        visit new_user_session_path
-        click_button 'Log in'
+    it "users_path show an user's picture" do
+        visit users_path
+        expect(page).to have_css('img', class: "img_profile")
+    end
+
+    it "users_path show the correct user's post_counter" do
+        visit users_path
+        expect(page).to have_content('1')
+    end
+
+    it "When I click on a user, I am redirected to that user's show page." do
+        visit users_path
+        click_link('us-profile')
         sleep(2)
-        expect(page).to have_content('Invalid Email or password.')
-    end
-
-    it 'new_user_session_path show a detailed error because wrong information in the form' do
-        visit new_user_session_path
-        within("#new_user") do
-            fill_in 'Email', with: 'adm@gmail.com'
-            fill_in 'Password', with: 'password'
-        end
-        click_button 'Log in'
-        sleep(2)
-        expect(page).to have_content('Invalid Email or password.')
-    end
-
-    it 'new_user_session_path redirect to root_path if receive right information' do
-        visit new_user_session_path
-        within("#new_user") do
-            fill_in 'Email', with: 'admin@gmail.com'
-            fill_in 'Password', with: 'password'
-        end
-        click_button 'Log in'
-        sleep(2)
-        expect(page).to have_current_path(root_path)
+        expect(page).to have_current_path(user_path(1))
     end
   end
 end
