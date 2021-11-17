@@ -34,3 +34,26 @@ user = User.new(
 )
 user.skip_confirmation!
 user.save!
+
+(1..10).each do |id|
+  Post.create!(
+      id: id,
+      author_id: rand(1..3),
+      title: Faker::Book.title,
+      text: Faker::Lorem.paragraph(sentence_count: 5, supplemental: true),
+      comments_counter: 0,
+      likes_counter: 0,
+  )
+end
+
+(1..10).each do |id|
+  Comment.create!(
+      id: id,
+      post_id: rand(1..10),
+      author_id: rand(1..3),
+      text: Faker::Lorem.paragraph,
+  )
+end
+ActiveRecord::Base.connection.tables.each do |t|
+ActiveRecord::Base.connection.reset_pk_sequence!(t)
+end
