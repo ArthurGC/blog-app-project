@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Blog App', type: :feature do
-  describe 'index page' do
+  describe 'user index page' do
 
     before :all do
         user = User.new(

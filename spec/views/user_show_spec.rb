@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Blog App', type: :feature do
-  describe 'show page' do
+  describe 'user show page' do
 
     before :all do
         user = User.new(
