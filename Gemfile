@@ -5,6 +5,8 @@ ruby '3.0.2'
 
 gem 'devise'
 
+gem 'jwt'
+
 gem 'cancancan', '~> 1.9'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
@@ -24,7 +26,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'font-awesome-rails'
 
-gem 'faker'
+gem 'faker', group: %i[development test]
 
 gem 'rails-controller-testing'
 
@@ -61,8 +63,13 @@ group :development, :test do
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
-  gem 'database_cleaner'
   gem 'webdrivers'
+end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'factory_bot_rails', '~> 4.0'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
