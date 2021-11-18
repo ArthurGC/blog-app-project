@@ -2,11 +2,10 @@ class ApplicationController < ActionController::Base
   include Response
   include ExceptionHandler
 
-  # called before every action on controllers
-  before_action :authorize_request
-  attr_reader :current_user
+  protect_from_forgery if: :json_request
+  protect_from_forgery with: :exception, unless: :json_request
 
-  protect_from_forgery with: :exception
+  before_action :authorize_request, if: :json_request
 
   before_action :update_allowed_parameters, if: :devise_controller?
 
@@ -14,16 +13,20 @@ class ApplicationController < ActionController::Base
 
   def update_allowed_parameters
     devise_parameter_sanitizer.permit(:sign_up) do |u|
-      u.permit(:name, :photo, :bio, :email, :password, :password_confirmation)
+      u.permit(:name, :bio, :photo, :email, :password)
     end
+
     devise_parameter_sanitizer.permit(:account_update) do |u|
-      u.permit(:name, :photo, :bio, :email, :password, :current_password)
+      u.permit(:name, :bio, :photo, :email, :password, :current_password)
     end
   end
 
   private
 
-  # Check for valid request token and return user
+  def json_request
+    request.format.json?
+  end
+
   def authorize_request
     @current_user = (AuthorizeApiRequest.new(request.headers).call)[:user]
   end

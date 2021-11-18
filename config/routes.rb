@@ -8,12 +8,13 @@ Rails.application.routes.draw do
     end
   end
   resources :posts, only: [:new, :create]
-  post 'login', to: 'authentication#authenticate'
-  post 'signup', to: 'users#create'
+
     namespace "api", defaults: { format: :json } do
+      post 'login', to: 'authentication#authenticate'
+      post 'signup', to: 'users#create'
       resources :users do
-        resources :posts, only: [:index] do
-          resources :comments, only: [:index, :create]
+        resources :posts do
+          resources :comments
         end
       end
     end

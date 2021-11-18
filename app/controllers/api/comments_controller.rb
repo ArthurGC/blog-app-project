@@ -10,14 +10,15 @@ class Api::CommentsController < ApplicationController
         @comment = @user.comments.new(comments_params)
         @comment.author_id = @user.id
         @comment.post_id = params[:post_id]
-        if @comment.save
-          flash[:notice] = 'Comment published succesfully'
+        response = if comment.save
+          { comment: comment }
         else
-          flash[:error] = 'Comment was not published'
+          { message: "comment didn't save" }
         end
+        json_response(response)
     end
 
     def comments_params
-        params.require(:comment).permit(:text)
+        params.require(:comment).permit(:text,:post_id)
       end
 end

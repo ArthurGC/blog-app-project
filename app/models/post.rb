@@ -23,4 +23,5 @@ class Post < ApplicationRecord
     post_counter = author.posts.count
     author.update(posts_counter: post_counter)
   end
+
 end
