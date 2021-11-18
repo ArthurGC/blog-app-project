@@ -5,6 +5,8 @@ ruby '3.0.2'
 
 gem 'devise'
 
+gem 'jwt'
+
 gem 'cancancan', '~> 1.9'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
