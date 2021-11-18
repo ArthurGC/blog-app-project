@@ -6,19 +6,19 @@ class Api::CommentsController < ApplicationController
     end
 
     def create
-        @user = current_user
-        @comment = @user.comments.new(comments_params)
-        @comment.author_id = @user.id
-        @comment.post_id = params[:post_id]
-        response = if comment.save
-          { comment: comment }
-        else
-          { message: "comment didn't save" }
-        end
-        json_response(response)
+      @user = current_user
+      @comment = @user.comments.new(comments_params)
+      @comment.author_id = @user.id
+      @comment.post_id = params[:post_id]
+      response = if @comment.save
+                   { comment: @comment }
+                 else
+                   { message: "Comment didn't save" }
+                 end
+      json_response(response)
     end
 
     def comments_params
-        params.require(:comment).permit(:text,:post_id)
-      end
+        params.permit(:text,:post_id)
+    end
 end

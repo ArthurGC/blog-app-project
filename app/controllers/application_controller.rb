@@ -21,11 +21,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  private
-
   def json_request
     request.format.json?
   end
+
+  private
 
   def authorize_request
     @current_user = (AuthorizeApiRequest.new(request.headers).call)[:user]
