@@ -16,7 +16,6 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
-
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -30,7 +29,7 @@ end
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
+Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
@@ -55,8 +54,8 @@ RSpec.configure do |config|
   config.before(:suite) { DatabaseCleaner.clean_with(:truncation) }
   config.before(:each) { DatabaseCleaner.strategy = :transaction }
 
-   # start the transaction strategy as examples are run
-   config.around(:each) do |example|
+  # start the transaction strategy as examples are run
+  config.around(:each) do |example|
     DatabaseCleaner.cleaning do
       example.run
     end
