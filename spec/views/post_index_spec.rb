@@ -16,7 +16,7 @@ RSpec.describe 'Blog App', type: :feature do
 
       @post = Post.create(
         author_id: @user.id,
-        title: "Lorenzo Post 1",
+        title: 'Lorenzo Post 1',
         text: 'Lorenzo was here. The Lorenzo 1',
         comments_counter: 0,
         likes_counter: 0
@@ -67,7 +67,7 @@ RSpec.describe 'Blog App', type: :feature do
     end
 
     it "When I click on a post, it redirects me to that post's show page." do
-      click_link("Lorenzo Post 1")
+      click_link('Lorenzo Post 1')
       expect(page).to have_current_path(user_post_path(@user.id, @post.id))
     end
   end
