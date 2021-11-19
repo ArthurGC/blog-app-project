@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Blog App', type: :feature do
   describe 'post index page' do
-    before :all do
-      user = User.new(
+    before :each do
+      @user = User.new(
         email: 'admin@gmail.com',
         bio: 'Lorenzo is my partner',
         password: 'password',
@@ -11,71 +11,64 @@ RSpec.describe 'Blog App', type: :feature do
         name: 'Admin',
         role: 'admin'
       )
-      user.skip_confirmation!
-      user.save!
+      @user.skip_confirmation!
+      @user.save!
 
-      Post.create(
-        id: 1,
-        author_id: 1,
-        title: "Lorenzo' Post 1",
+      @post = Post.create(
+        author_id: @user.id,
+        title: "Lorenzo Post 1",
         text: 'Lorenzo was here. The Lorenzo 1',
         comments_counter: 0,
         likes_counter: 0
       )
 
-      Comment.create(
-        author_id: 1,
-        post_id: 1,
+      @comment1 = Comment.create(
+        author_id: @user.id,
+        post_id: @post.id,
         text: 'Capybaras are cool'
       )
 
-      Comment.create(
-        author_id: 1,
-        post_id: 1,
+      @comment2 = Comment.create(
+        author_id: @user.id,
+        post_id: @post.id,
         text: 'Capybaras are bad'
       )
+
+      visit user_posts_path(@user.id)
     end
 
     it "user_posts_path show an user's picture" do
-      visit user_posts_path(1)
       expect(page).to have_css('img', class: 'img_profile')
     end
 
     it 'user_posts_path show name of users' do
-      visit user_posts_path(1)
-      expect(page).to have_content('Admin')
+      expect(page).to have_content(@user.name)
     end
 
     it "user_posts_path show the correct user's post_counter" do
-      visit user_posts_path(1)
-      expect(page).to have_content('1')
+      expect(page).to have_content(@user.posts_counter)
     end
 
     it 'user_posts_path shows the recent posts' do
-      visit user_posts_path(1)
-      expect(page).to have_content("Lorenzo' Post 1")
+      expect(page).to have_content(@post.title)
     end
 
     it 'user_posts_path shows the comments' do
-      visit user_posts_path(1)
-      expect(page).to have_content('Capybaras are cool')
-      expect(page).to have_content('Capybaras are bad')
+      expect(page).to have_content(@comment1.text)
+      expect(page).to have_content(@comment2.text)
     end
 
     it 'user_posts_path shows the comments counter' do
-      visit user_posts_path(1)
-      expect(page).to have_content('2')
+      expect(page).to have_content(@post.comments_counter)
     end
 
     it 'user_posts_path shows the likes counter' do
-      visit user_posts_path(1)
-      expect(page).to have_content('0')
+      expect(page).to have_content(@post.likes_counter)
     end
 
     it "When I click on a post, it redirects me to that post's show page." do
-      visit user_posts_path(1)
-      click_link("Lorenzo' Post 1")
-      expect(page).to have_current_path(user_post_path(1, 1))
+      click_link("Lorenzo Post 1")
+      expect(page).to have_current_path(user_post_path(@user.id, @post.id))
     end
   end
 end

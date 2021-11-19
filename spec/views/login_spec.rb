@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Blog App', type: :feature do
   describe 'login page' do
-    before :all do
+    before :each do
       user = User.new(
         email: 'admin@gmail.com',
         password: 'password',

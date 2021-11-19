@@ -2,8 +2,15 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before :each do
-    @user = User.new(name: 'Alex', photo: 'Photo', bio: 'I am a Front-end developer')
-    @user.save
+    @user = User.new(
+      email: 'admin@gmail.com',
+      password: 'password',
+      password_confirmation: 'password',
+      name: 'Admin',
+      role: 'admin'
+    )
+    @user.skip_confirmation!
+    @user.save!
   end
 
   it 'name should be present' do

@@ -3,10 +3,24 @@ require 'faker'
 
 RSpec.describe Post, type: :model do
   before :each do
-    @user = User.create(name: 'Alex', photo: 'Photo', bio: 'I am a Front-end developer')
-    @post = @user.posts.new(title: 'I am a title', text: 'I am a text')
-    @post.author_id = @user.id
-    @post.save
+    @user = User.new(
+      email: 'admin@gmail.com',
+      password: 'password',
+      password_confirmation: 'password',
+      name: 'Admin',
+      role: 'admin'
+    )
+    @user.skip_confirmation!
+    @user.save!
+    @post = @user.posts.create(title: 'I am a title', text: 'I am a text', author_id: @user.id)
+
+    (1..8).each do |_id|
+      @post.comments.create(
+        author_id: @user.id,
+        post_id: @post.id,
+        text: 'This is a comment'
+      )
+    end
   end
 
   it 'title should be present' do
@@ -30,13 +44,6 @@ RSpec.describe Post, type: :model do
   end
 
   it 'recentComments should be return 5 comments' do
-    (1..8).each do |_id|
-      @post.comments.create(
-        author_id: 1,
-        post_id: @post.id,
-        text: 'This is a comment'
-      )
-    end
     expect(@post.recent_comments.length).to be(5)
   end
 

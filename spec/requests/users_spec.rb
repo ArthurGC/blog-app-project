@@ -2,7 +2,16 @@ require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
   before :each do
-    @user = User.create(name: 'Alex', photo: 'Photo', bio: 'I am a Front-end developer')
+    @user = User.new(
+      email: 'admin@gmail.com',
+      password: 'password',
+      password_confirmation: 'password',
+      name: 'Alex',
+      role: 'admin',
+      bio: 'I am a Front-end developer'
+    )
+    @user.skip_confirmation!
+    @user.save!
   end
 
   describe 'GET /index' do
