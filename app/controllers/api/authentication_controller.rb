@@ -9,6 +9,13 @@ class Api::AuthenticationController < ApplicationController
   private
 
   def auth_params
-    params.permit(:email, :password)
+    params.permit(
+      :name,
+      :bio,
+      :photo,
+      :email,
+      :password,
+      :password_confirmation
+    )
   end
 end
