@@ -7,6 +7,8 @@ gem 'devise'
 
 gem 'jwt'
 
+gem 'rswag'
+
 gem 'cancancan', '~> 1.9'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
@@ -70,6 +72,13 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_bot_rails', '~> 4.0'
   gem 'shoulda-matchers', '~> 3.1'
+end
+
+gem 'rswag-api'
+gem 'rswag-ui'
+
+group :development, :test do
+  gem 'rswag-specs'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
