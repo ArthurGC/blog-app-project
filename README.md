@@ -5,7 +5,7 @@ The Blog app is a classic example of a blog website. It is a fully functional we
 
 ## Screenshot
 
-- ![Blog App root](https://raw.githubusercontent.com/ArthurGC/blog-app-project/setup-mailer/app/assets/images/FireShot_Capture_002_BlogAppProject_blog-app-arthurgca-herokuapp-com.png)
+![Blog App root](https://raw.githubusercontent.com/ArthurGC/blog-app-project/setup-mailer/app/assets/images/FireShot_Capture_002_BlogAppProject_blog-app-arthurgca-herokuapp-com.png)
 
 ## :hammer: Built With
 
