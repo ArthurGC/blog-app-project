@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'font-awesome-rails'
 
-gem 'faker', group: %i[development test]
+gem 'faker'
 
 gem 'rails-controller-testing'
 
