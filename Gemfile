@@ -9,6 +9,12 @@ gem 'jwt'
 
 gem 'rswag'
 
+gem 'spring'
+
+gem 'rake'
+
+gem 'rspec'
+
 gem 'cancancan', '~> 1.9'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
@@ -32,7 +38,7 @@ gem 'faker'
 
 gem 'rails-controller-testing'
 
-gem 'rspec-rails', group: %i[development test]
+gem 'rspec-rails', group: %i[development test production]
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -57,7 +63,6 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
 end
 
 group :development, :test do
@@ -76,6 +81,7 @@ end
 
 gem 'rswag-api'
 gem 'rswag-ui'
+gem 'rack-timeout', '0.3.2'
 
 group :development, :test do
   gem 'rswag-specs'
