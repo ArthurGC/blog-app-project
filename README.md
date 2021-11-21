@@ -3,9 +3,9 @@
 
 The Blog app is a classic example of a blog website. It is a fully functional website that shows the list of posts and empower readers to interact with them by adding comments and liking posts.
 
-## Live Demo
+## Screenshot
 
-- Under construction
+- ![Blog App root]('/app/assets/images/FireShot_Capture_002_BlogAppProject_blog-app-arthurgca-herokuapp-com.png')
 
 ## :hammer: Built With
 
