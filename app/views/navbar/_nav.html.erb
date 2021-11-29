@@ -6,19 +6,19 @@
             </li>
             <ul class=" menu d-flex align-items-center justify-content-between gap-4">
                 <li>
-                    <%= link_to "New Post", new_post_path, class: "link text-success" %>
+                    <%= link_to "New Post", new_post_path, class: "link text-white" %>
                 </li>
                 <li>
-                    <%= link_to "All Users", users_path, class: "link text-success" %>
+                    <%= link_to "All Users", users_path, class: "link text-white" %>
                 </li>
                 <% unless user_signed_in? %>
                 <li>
-                    <%= link_to "Log in", new_user_session_path, class: "link text-success" %>
+                    <%= link_to "Log in", new_user_session_path, class: "link text-white" %>
                 </li>
                 <% end %>
                 <% if user_signed_in? %>
                 <li>
-                    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "link text-success" %>
+                    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "link text-white" %>
                 </li>
                 <li>
                     <button class="btn btn-outline-success">Hello <%= current_user.name %></button>

@@ -1,0 +1,23 @@
+.headline {
+    background-color: rgba(0,0,0,1);
+    background-image: url("parrot_headline.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    .main-title {
+        font-size: calc(3rem + 2vw);
+        font-weight: bold;
+        color: #ffffff;
+        z-index: 1;
+    }
+
+    .color-overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: #000;
+        opacity: 0.1;
+    }
+}
