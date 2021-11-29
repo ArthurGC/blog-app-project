@@ -1,20 +1,13 @@
-
-<article class="user-card">
-    <%= link_to user, class: 'user_link_container' do %>
-    <div class="photo-container">
-        <%= image_tag('cartoon_1.png', :alt => "parrot logo", :class => "img_profile") %>
-    </div>
-    <% end %>
-    <div class="user-container">
+<div class="col p-4">
+    <div class="card">
+        <%= image_tag('cartoon_1.png', :alt => "parrot logo", :class => "card-img-top") %>
+      <!-- <img src="cartoon_1.png" class="card-img-top" alt="user-picture"> -->
+      <div class="card-body">
         <%= link_to user, class: 'user_link_container', id: 'us-profile' do %>
-        <h2 class="user-name fs-5 fw-bold"><%= user.name %></h2>
+        <h5 class="card-title"><%= user.name %></h5>
         <% end %>
-        <div class="d-flex flex-column align-items-end">
-            <p class="fs-6 fw-bold text-secondary m-0">Posts</p>
-            <p class="fs-3 fw-bold mb-2"><%= user.posts_counter %></p>
-            <%= link_to "See profile", user, class: "btn btn-success see" %>
-        </div>
-        
+        <p class="card-text">Post: <%= user.posts_counter %></p>
+        <%= link_to "See profile", user, class: "button button-text" %>
+      </div>
     </div>
-</article>
-
+</div>
