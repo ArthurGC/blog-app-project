@@ -79,9 +79,9 @@ group :test do
   gem 'shoulda-matchers', '~> 3.1'
 end
 
+gem 'rack-timeout', '0.3.2'
 gem 'rswag-api'
 gem 'rswag-ui'
-gem 'rack-timeout', '0.3.2'
 
 group :development, :test do
   gem 'rswag-specs'
