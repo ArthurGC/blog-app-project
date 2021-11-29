@@ -50,6 +50,10 @@ rails db:seed
 ```ruby
 rails server
 ```
+[OPTIONAL] if you receive an error about turbolinks or application.(css/js) after running the server. Please use this command before run the server:
+```ruby
+rails assets:precompile
+```
 
 **Run tests**
 
