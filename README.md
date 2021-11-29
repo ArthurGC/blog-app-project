@@ -9,17 +9,58 @@ The Blog app is a classic example of a blog website. It is a fully functional we
 
 ## :hammer: Preview
 
-- [Deployment](https://blog-app-arthurgca.herokuapp.com/)
+- [Preview App](https://blog-app-arthurgca.herokuapp.com/)
 
 ## :hammer: Built With
 
-- Ruby
+- Ruby on Rails
+- Bootstrap
+- Heroku
 
 To get a local copy up and running follow these simple steps:
 
-1. Go to the [repository page](https://github.com/ArthurGC/blog-app-project).
-2. Press the "Code" button and copy the link.
-3. Clone it using git command `git clone <link>`.
+**First Steps**
+
+1. Clone it using git command:
+```ruby
+git clone https://github.com/ArthurGC/blog-app-project.git
+```
+
+**Run in development (locally)**
+
+1. Install gem files and dependencies:
+```ruby
+bundle install
+```
+```ruby
+yarn install
+```
+2. Setup you database.yml with your own postgres's password or create a PASS_POSTGRES environment variable 
+```ruby
+  password: <%= ENV["PASS_POSTGRESQL"] %>
+```
+4. Setup db and seed file
+```ruby
+rails db:setup
+```
+```ruby
+rails db:seed
+```
+5. Run server
+```ruby
+rails server
+```
+
+**Run tests**
+
+1. To run all tests in the project
+```ruby
+rspec
+``` 
+If you wanna run a certain test file
+```ruby
+rspec spec/test_file_path
+```
 
 ## :blue_book: Learning Objectives
 
